@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* ===== Skill Section Styling ===== */
+.section {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill__category h3 {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.skill__category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill__category li {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #444;
+  position: relative;
+}
+
+.skill-bar {
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.level {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: #00b894;
+}
+
+/* Specific skill levels */
+.level.html { width: 95%; }
+.level.css { width: 70%; }
+.level.js { width: 75%; }
+/* .level.ts { width: 50%; } */
+.level.react { width: 30%; }
+.level.next { width: 30%; }
+.level.tailwind { width: 45%; }
+.level.bootstrap { width: 65%; }
+.level.git { width: 45%; }
+.level.vscode { width: 80%; }
+.level.figma { width: 55%; }
+.level.devtools { width: 50%; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+<body>
+ <section class="skills section" id="skills">
+  <h2 class="section-title">My Skills</h2>
+
+  <div class="skills__container">
+    <div class="skill__category">
+      <h3>Languages</h3>
+      <ul>
+        <li>
+          HTML
+          <span class="skill-percent">95%</span>
+          <span class="skill-bar"><span class="level html"></span></span>
+        </li>
+        <li>
+          CSS
+          <span class="skill-percent">70%</span>
+          <span class="skill-bar"><span class="level css"></span></span>
+        </li>
+        <li>
+          JavaScript
+          <span class="skill-percent">75%</span>
+          <span class="skill-bar"><span class="level js"></span></span>
+        </li>
+        <!-- <li>
+          TypeScript
+          <span class="skill-percent">70%</span>
+          <span class="skill-bar"><span class="level ts"></span></span>
+        </li> -->
+      </ul>
+    </div>
+
+    <div class="skill__category">
+      <h3>Frameworks / Libraries</h3>
+      <ul>
+        <li>
+          React
+          <span class="skill-percent">50%</span>
+          <span class="skill-bar"><span class="level react"></span></span>
+        </li>
+        <li>
+          Next.js
+          <span class="skill-percent">30%</span>
+          <span class="skill-bar"><span class="level next"></span></span>
+        </li>
+        <li>
+          Tailwind CSS
+          <span class="skill-percent">45%</span>
+          <span class="skill-bar"><span class="level tailwind"></span></span>
+        </li>
+        <li>
+          Bootstrap
+          <span class="skill-percent">65%</span>
+          <span class="skill-bar"><span class="level bootstrap"></span></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="skill__category">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>
+          Git & GitHub
+          <span class="skill-percent">45%</span>
+          <span class="skill-bar"><span class="level git"></span></span>
+        </li>
+        <li>
+          VS Code
+          <span class="skill-percent">80%</span>
+          <span class="skill-bar"><span class="level vscode"></span></span>
+        </li>
+        <li>
+          Figma
+          <span class="skill-percent">55% </span>
+           
+          <span class="skill-bar"><span class="level figma"></span></span>
+        </li>
+        <li>
+          Chrome DevTools
+          <span class="skill-percent">50%</span>
+          <span class="skill-bar"><span class="level devtools"></span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
