@@ -1,172 +1,212 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<style>
-  /* ===== Skill Section Styling ===== */
-.section {
-  padding: 2rem;
-  background-color: #f5f5f5;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-.section-title {
+    <style>
+   .tech-stack-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
 }
 
-.skills__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+/* Base heading styles */
+.section-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid transparent; /* For blinking cursor if needed */
 }
 
-.skill__category h3 {
-  margin-bottom: 1rem;
-  color: #555;
+/* Animation for typing effect */
+.animate-text {
+  display: inline-block;
+  animation: typing 2s steps(20, end) forwards;
 }
 
-.skill__category ul {
-  list-style: none;
-  padding: 0;
-}
-
-.skill__category li {
-  margin-bottom: 1rem;
-  font-weight: 500;
-  color: #444;
-  position: relative;
-}
-
-.skill-bar {
-  display: block;
-  width: 100%;
-  height: 8px;
-  background: #ddd;
-  border-radius: 4px;
-  margin-top: 4px;
-}
-
-.level {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: #00b894;
-}
-
-/* Specific skill levels */
-.level.html { width: 95%; }
-.level.css { width: 70%; }
-.level.js { width: 75%; }
-/* .level.ts { width: 50%; } */
-.level.react { width: 30%; }
-.level.next { width: 30%; }
-.level.tailwind { width: 45%; }
-.level.bootstrap { width: 65%; }
-.level.git { width: 45%; }
-.level.vscode { width: 80%; }
-.level.figma { width: 55%; }
-.level.devtools { width: 50%; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .skills__container {
-    grid-template-columns: 1fr;
+/* Typing animation keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
+.animate-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  margin-left: 4px;
+}
 
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+
+/* New wrapper to center tech-row */
+.tech-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.tech-row {
+  display: flex;
+  gap: 30px;
+  padding: 10px 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+}
+
+.tech-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+}
+
+.tech-item p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: -25px;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.tech-item:hover .tooltip {
+  opacity: 1;
+}
 </style>
+</head>
 <body>
- <section class="skills section" id="skills">
-  <h2 class="section-title">My Skills</h2>
 
-  <div class="skills__container">
-    <div class="skill__category">
-      <h3>Languages</h3>
-      <ul>
-        <li>
-          HTML
-          <span class="skill-percent">95%</span>
-          <span class="skill-bar"><span class="level html"></span></span>
-        </li>
-        <li>
-          CSS
-          <span class="skill-percent">70%</span>
-          <span class="skill-bar"><span class="level css"></span></span>
-        </li>
-        <li>
-          JavaScript
-          <span class="skill-percent">75%</span>
-          <span class="skill-bar"><span class="level js"></span></span>
-        </li>
-        <!-- <li>
-          TypeScript
-          <span class="skill-percent">70%</span>
-          <span class="skill-bar"><span class="level ts"></span></span>
-        </li> -->
-      </ul>
-    </div>
+<section class="tech-stack-section">
+  <h2 class="section-title animate-text">🧰 Tech Stack</h2>
 
-    <div class="skill__category">
-      <h3>Frameworks / Libraries</h3>
-      <ul>
-        <li>
-          React
-          <span class="skill-percent">50%</span>
-          <span class="skill-bar"><span class="level react"></span></span>
-        </li>
-        <li>
-          Next.js
-          <span class="skill-percent">30%</span>
-          <span class="skill-bar"><span class="level next"></span></span>
-        </li>
-        <li>
-          Tailwind CSS
-          <span class="skill-percent">45%</span>
-          <span class="skill-bar"><span class="level tailwind"></span></span>
-        </li>
-        <li>
-          Bootstrap
-          <span class="skill-percent">65%</span>
-          <span class="skill-bar"><span class="level bootstrap"></span></span>
-        </li>
-      </ul>
-    </div>
+  <div class="tech-wrapper">
+    <div class="tech-row">
 
-    <div class="skill__category">
-      <h3>Tools & Platforms</h3>
-      <ul>
-        <li>
-          Git & GitHub
-          <span class="skill-percent">45%</span>
-          <span class="skill-bar"><span class="level git"></span></span>
-        </li>
-        <li>
-          VS Code
-          <span class="skill-percent">80%</span>
-          <span class="skill-bar"><span class="level vscode"></span></span>
-        </li>
-        <li>
-          Figma
-          <span class="skill-percent">55% </span>
-           
-          <span class="skill-bar"><span class="level figma"></span></span>
-        </li>
-        <li>
-          Chrome DevTools
-          <span class="skill-percent">50%</span>
-          <span class="skill-bar"><span class="level devtools"></span></span>
-        </li>
-      </ul>
+      <!-- Your tech-item links here -->
+      <!-- Example: -->
+      <a class="tech-item" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <span class="tooltip">Go to Docs</span>
+        <p>HTML</p>
+      </a>
+
+     <!-- CSS -->
+    <a class="tech-item" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <span class="tooltip">Go to Docs</span>
+      <p>CSS</p>
+    </a>
+
+    <!-- JavaScript -->
+    <a class="tech-item" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <span class="tooltip">Go to Docs</span>
+      <p>JavaScript</p>
+    </a>
+
+    <!-- React -->
+    <a class="tech-item" href="https://reactjs.org/docs/getting-started.html" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <span class="tooltip">Go to Docs</span>
+      <p>React</p>
+    </a>
+
+    <!-- Tailwind -->
+    <a class="tech-item" href="https://tailwindcss.com/docs" target="_blank">
+      <img src="https://www.svgrepo.com/show/374118/tailwind.svg" alt="Tailwind">
+      <span class="tooltip">Go to Docs</span>
+      <p>Tailwind</p>
+    </a>
+
+    <!-- Git -->
+    <a class="tech-item" href="https://git-scm.com/doc" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <span class="tooltip">Go to Docs</span>
+      <p>Git</p>
+    </a>
+
+    <!-- VSCode -->
+    <a class="tech-item" href="https://code.visualstudio.com/docs" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode">
+      <span class="tooltip">Go to Docs</span>
+      <p>VSCode</p>
+    </a>
+
+    <!-- npm -->
+    <a class="tech-item" href="https://docs.npmjs.com/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm">
+      <span class="tooltip">Go to Docs</span>
+      <p>npm</p>
+    </a>
+
+    <!-- Vite -->
+    <a class="tech-item" href="https://vitejs.dev/guide/" target="_blank">
+      <img src="https://vitejs.dev/logo.svg" alt="Vite">
+      <span class="tooltip">Go to Docs</span>
+      <p>Vite</p>
+    </a>
+
+    <!-- Node.js -->
+    <a class="tech-item" href="https://nodejs.org/en/docs" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+      <span class="tooltip">Go to Docs</span>
+      <p>Node.js</p>
+    </a>
+
+    <!-- Firebase -->
+    <a class="tech-item" href="https://firebase.google.com/docs" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+      <span class="tooltip">Go to Docs</span>
+      <p>Firebase</p>
+    </a>
+
+    <!-- MongoDB -->
+    <a class="tech-item" href="https://www.mongodb.com/docs/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+      <span class="tooltip">Go to Docs</span>
+      <p>MongoDB</p>
+    </a>
+
     </div>
   </div>
 </section>
+
 
 </body>
 </html>

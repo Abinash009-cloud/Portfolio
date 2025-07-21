@@ -205,7 +205,10 @@ img {
 
 .home__title-color {
   color: var(--first-color);
+  
 }
+
+
 
 .home__social {
   display: flex;
@@ -263,6 +266,8 @@ img {
 .about__subtitle {
   margin-bottom: var(--mb-2);
 }
+
+
 
 .about__img {
   justify-self: center;
